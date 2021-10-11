@@ -44,7 +44,7 @@ client.connect(err => {
       })
   })
   app.get('/product/:id', (req, res) => {
-    // const id = req.params.id
+    const id = req.params.id
     AllLaptopCollection.find({ _id: ObjectId(id) })
       .toArray((err, documents) => {
         res.status(200).send(documents[0])
